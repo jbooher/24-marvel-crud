@@ -1,0 +1,160 @@
+.preview, .character, .input {
+  &--image {
+    width: 400px;
+    border: 2px solid #000;
+    border-radius: 5px;
+  }
+
+  &--cancel, &--add, &--submit, &--delete {
+    width: 120px;
+    height: 50px;
+    background-image: linear-gradient(to bottom, #0000cc, #3333ff);
+    font-size: 1.2em;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    text-transform: uppercase;
+
+
+    &:hover {
+      background-image: linear-gradient(to bottom, #0000ff, #6666ff);
+    }
+  }
+
+  &--name {
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+
+  &--form {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  &--description {
+    width: 404px;
+    text-align: justify;
+  }
+}
+
+.preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+
+  &--name {
+    font-size: 3rem;
+  }
+}
+
+.container {
+  width: 80%;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+
+  &--text {
+    height: 48px;
+    width: 500px;
+    font-size: 1.2rem;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-right: -10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--submit {
+    margin-left: -10px;
+  }
+}
+
+.team-header {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 3rem;
+}
+
+.character-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.character {
+  display: flex;
+  width: 45%;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: box-shadow, 1s;
+
+  &:hover {
+    box-shadow: 0px 0px 50px 10px rgba(0,0,0,0.75);
+    transform: translateY(-5px);
+    transition: box-shadow, 1s;
+  }
+
+  &--left {
+    width: 35%;
+    margin-right: 20px;
+  }
+
+  &--image {
+    width: 100%;
+  }
+
+  &--right {
+    width: 60%;
+  }
+
+  &--top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  &--name {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  &--delete {
+    width: 80px;
+    height: 40px;
+    font-size: 1rem;
+    background-image: linear-gradient(to bottom, #cc0000, #ff7373);
+
+    &:hover {
+      background-image: linear-gradient(to bottom, #f51818, #fc8383);
+    }
+  }
+
+  &--description {
+    font-size: .8rem;
+    width: 100%;
+  }
+}

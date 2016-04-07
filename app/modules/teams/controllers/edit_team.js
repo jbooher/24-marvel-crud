@@ -79,11 +79,11 @@ class EditTeamController {
 				.get(`http://gateway.marvel.com:80/v1/public/characters?name=${this.name}&apikey=6e7bd33438a14b84d91097cd3cfc46b5`)
 				.then((response) => {
 					console.log(response);
-					this.character = response.data.data.results[0];
-					if(this.validateAdd(this.character)) {
-						this.previewName = this.character.name;
-						this.previewDesc = this.character.description;
-						this.previewImage = `${this.character.thumbnail.path}.${this.character.thumbnail.extension}`;
+					this.hero = response.data.data.results[0];
+					if(this.validateAdd(this.hero)) {
+						this.previewName = this.hero.name;
+						this.previewDesc = this.hero.description;
+						this.previewImage = `${this.hero.thumbnail.path}.${this.hero.thumbnail.extension}`;
 					}
 			}).catch((error) => {
 				console.log(`Error: ${error}`);
@@ -100,28 +100,32 @@ class EditTeamController {
 		this.previewName = "";
 		this.name = "";
 
-		let char = new Character(
-			this.character.name,
-			this.character.description,
-			`${this.character.thumbnail.path}.${this.character.thumbnail.extension}`);
+		this._$http
+			.post(`https://teams.mybluemix.net/api/heroes`, {
+				"name": this.hero.name,
+				"marvel_id": this.hero.id,
+				"description": this.hero.description,
+				"team_id": this.id,
+				"image": `${this.hero.thumbnail.path}.${this.hero.thumbnail.extension}`
+			})
+			.then((response) => {
+				console.log(response);
+			})
 
-		this.characters.push(char);
+		this.heroes.push(this.hero);
 
   }
 
-  deleteCharacter(character) {
-		this.characters.splice(this.characters.indexOf(character), 1);
+  deleteCharacter(hero) {
+		this.heroes.splice(this.heroes.indexOf(hero), 1);
   }
 
 	validateAdd(char){
-		console.log("validating");
 		let valid = true
 
-		this.characters.forEach((character) => {
-			console.log(character.name);
-			console.log(char.name);
+		this.heroes.forEach((hero) => {
 
-			if (character.name === char.name) {
+			if (hero.name === char.name) {
 				alert("You have already added that character");
 				valid = false;
 			}
