@@ -9,7 +9,7 @@
 </div>
 
 <div class="container">
-  <form class="input" ng-hide="editCtrl.heroes.length >= 26" ng-submit="editCtrl.previewCharacter()">
+  <form class="input" ng-hide="editCtrl.heroes.length >= 6" ng-submit="editCtrl.previewCharacter()">
     <input class="input--text" type="text" ng-model="editCtrl.name">
     <input class="input--submit" type="submit">
   </form>
@@ -17,10 +17,10 @@
   <h1 class="team-header">Your Team ({{editCtrl.heroes.length}}/6)</h1>
 
   <div class="character-list">
-    <div class="character" ng-repeat="character in editCtrl.heroes">
+    <div class="character" ng-repeat="character in editCtrl.heroes | orderBy: 'name'">
 
       <div class="character--left">
-        <img class="character--image" ng-src="{{character.image}}">
+        <img class="character--image" ng-src="{{ character.image }}">
       </div>
 
       <div class="character--right">
