@@ -25,6 +25,7 @@ class EditTeamController {
   }
 
 	previewCharacter() {
+		document.querySelector('.preview--form').focus();
 			this._$http
 				.get(`http://gateway.marvel.com:80/v1/public/characters?name=${this.name}&apikey=6e7bd33438a14b84d91097cd3cfc46b5`)
 				.then((response) => {

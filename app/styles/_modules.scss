@@ -1,6 +1,8 @@
-.navigation {
-  text-align: center;
-}
+@import "./modules/index.scss";
+@import "./modules/team.scss";
+@import "./modules/teams.scss";
+@import "./modules/new_team.scss";
+@import "./modules/edit_team.scss";
 
 .preview, .character, .input {
   &--image {
@@ -43,31 +45,6 @@
   }
 }
 
-.preview {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0,0,0,.75);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-
-  &--name {
-    font-size: 3rem;
-  }
-}
-
-.container {
-  width: 80%;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-}
-
 .input {
   align-self: center;
   display: flex;
@@ -92,10 +69,49 @@
   }
 }
 
-.team-header {
+.header {
   text-align: center;
   margin: 20px 0;
-  font-size: 3rem;
+  font-size: 2.25rem;
+
+  &--name {
+    color: #0000cc;
+    font-variant: small-caps;
+    display: inline-block;
+    margin: 10px 0;
+  }
+
+  &--creator {
+    color: #333;
+    display: inline-block;
+    font-size: 1.75rem;
+    font-style: italic;
+    font-weight: normal;
+  }
+
+  &--edit {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    vertical-align: middle;
+
+    .button {
+      font-size: .5rem;
+      vertical-align: middle;
+    }
+  }
+
+  &--nav {
+    font-size: 1.5rem;
+  }
+}
+
+.team-list {
+  text-align: center;
+  font-size: 1.25rem;
+
+  a:hover {
+
+  }
 }
 
 .character-list {

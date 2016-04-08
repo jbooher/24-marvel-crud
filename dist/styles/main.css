@@ -9,8 +9,60 @@ ul {
   list-style: none;
   padding: 0; }
 
+body {
+  font-family: Helvetica; }
+
 .navigation {
-  text-align: center; }
+  background: linear-gradient(45deg, darkblue -60%, lightblue, darkblue);
+  border-bottom: 3px solid #00004d;
+  text-align: center;
+  height: 100px;
+  font-size: 3rem; }
+  .navigation a {
+    color: #fff;
+    display: inline-block;
+    background-image: linear-gradient(to bottom, #606d75, #000);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px; }
+
+.button {
+  padding: 10px 20px;
+  background-image: linear-gradient(to bottom, #0000cc, #3333ff);
+  font-size: 1.2em;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px;
+  text-transform: uppercase; }
+
+.container {
+  width: 80%;
+  margin: 0px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to top, #eee, #777);
+  border-left: 1px solid #333;
+  border-right: 1px solid #333; }
+
+body {
+  background-image: linear-gradient(to bottom, #eee, #777); }
+
+.preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff; }
+  .preview--name {
+    font-size: 3rem; }
 
 .preview--image, .character--image, .input--image {
   width: 400px;
@@ -43,27 +95,6 @@ ul {
   width: 404px;
   text-align: justify; }
 
-.preview {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.75);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff; }
-  .preview--name {
-    font-size: 3rem; }
-
-.container {
-  width: 80%;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column; }
-
 .input {
   align-self: center;
   display: flex;
@@ -81,10 +112,34 @@ ul {
   .input--submit {
     margin-left: -10px; }
 
-.team-header {
+.header {
   text-align: center;
   margin: 20px 0;
-  font-size: 3rem; }
+  font-size: 2.25rem; }
+  .header--name {
+    color: #0000cc;
+    font-variant: small-caps;
+    display: inline-block;
+    margin: 10px 0; }
+  .header--creator {
+    color: #333;
+    display: inline-block;
+    font-size: 1.75rem;
+    font-style: italic;
+    font-weight: normal; }
+  .header--edit {
+    margin: 10px 0;
+    font-size: 1.5rem;
+    vertical-align: middle; }
+    .header--edit .button {
+      font-size: .5rem;
+      vertical-align: middle; }
+  .header--nav {
+    font-size: 1.5rem; }
+
+.team-list {
+  text-align: center;
+  font-size: 1.25rem; }
 
 .character-list {
   display: flex;

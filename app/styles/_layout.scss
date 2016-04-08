@@ -1,0 +1,42 @@
+.navigation {
+  background: linear-gradient(45deg, darkblue -60%, lightblue, darkblue);
+  border-bottom: 3px solid #00004d;  text-align: center;
+  height: 100px;
+  font-size: 3rem;
+
+  a {
+    color: #fff;
+    display: inline-block;
+    background-image: linear-gradient(to bottom, #606d75, #000);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+}
+
+.button {
+  padding: 10px 20px;
+  background-image: linear-gradient(to bottom, #0000cc, #3333ff);
+  font-size: 1.2em;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px;
+  text-transform: uppercase;
+}
+
+.container {
+  width: 80%;
+  margin: 0px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(to top, #eee, #777);
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+}
+
+body {
+  background-image: linear-gradient(to bottom, #eee, #777);
+
+}

@@ -1,14 +1,19 @@
-<header>
+<header class="header">
 
-  <h1>Teams!</h1>
-  <h2>User created teams of Marvel Superheroes.</h2>
-  <a ui-sref="new_team">
-    <input type="button" value="New Team">
-  </a>
+  <h1 class="header--name">Teams!</h1>
+  <h2 class="header--edit">User created teams of Marvel Superheroes.</h2>
+  <nav class="header--nav">
+    <a ui-sref="new_team">
+      <input class="button" type="button" value="New Team">
+    </a>
+    <a ui-sref="index">
+      <input class="button" type="button" value="Change User">
+    </a>
+  </nav>
 
 </header>
 
-<ul>
+<ul class="team-list">
   <li ng-repeat="team in teamsCtrl.teams | orderBy: 'creator'">
     <a ui-sref="team({id: team.id})">
       <span>{{ team.name }} by {{ team.creator }}</span>

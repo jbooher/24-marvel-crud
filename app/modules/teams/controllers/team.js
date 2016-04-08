@@ -4,6 +4,7 @@ class TeamController {
     this._$http = $http;
     this.id = $stateParams.id;
 		this.heroes = [];
+		this.validated = false;
 
     this.getData();
 	}
@@ -13,6 +14,10 @@ class TeamController {
 			.get(`https://teams.mybluemix.net/api/teams/${this.id}`)
 			.then((response) => {
 				this.team = response.data;
+
+				if(this.team.creator === JSON.parse(localStorage.getItem('name'))) {
+					this.validated = true;
+				}
 		});
 
 		this._$http
@@ -21,7 +26,6 @@ class TeamController {
 				this.heroes = response.data;
 			})
   }
-
 }
 
 export default TeamController;

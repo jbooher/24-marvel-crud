@@ -1,10 +1,13 @@
-  <header>
-    <h1 class="team-name">{{ teamCtrl.team.name }}</h1>
-    <h2 class="team-creator">by {{ teamCtrl.team.creator }}</h2>
-    <span class="team-edit">Your Team?</span>
-    <a ui-sref="edit_team({id: teamCtrl.id})">
-      Edit it!
-    </a>
+  <header class="header">
+    <h1 class="header--name">{{ teamCtrl.team.name }}</h1>
+    <h2 class="header--creator">by {{ teamCtrl.team.creator }}</h2>
+    <div class="header--edit" ng-show="teamCtrl.validated">
+      This is one of your teams.
+      <input type="submit" class="button" ui-sref="edit_team({id: teamCtrl.id})" value="Edit">
+    </div>
+    <div class="header--edit" ng-hide="teamCtrl.validated">
+      <span>You can only view this team.</span>
+    </div>
   </header>
 
   <div class="character-list">
