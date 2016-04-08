@@ -1,1 +1,17 @@
-Stuff
+<header>
+
+  <h1>Teams!</h1>
+  <h2>User created teams of Marvel Superheroes.</h2>
+  <a ui-sref="new_team">
+    <input type="button" value="New Team">
+  </a>
+
+</header>
+
+<ul>
+  <li ng-repeat="team in teamsCtrl.teams | orderBy: 'creator'">
+    <a ui-sref="team({id: team.id})">
+      <span>{{ team.name }} by {{ team.creator }}</span>
+    </a>
+  </li>
+</ul>

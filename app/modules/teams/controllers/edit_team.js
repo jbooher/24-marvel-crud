@@ -14,16 +14,13 @@ class EditTeamController {
 		this._$http
 			.get(`https://teams.mybluemix.net/api/teams/${this.id}`)
 			.then((response) => {
-				console.log(response);
 				this.team = response.data;
 			});
 
 		this._$http
 			.get(`https://teams.mybluemix.net/api/heroes?filter[where][team_id]=${this.id}`)
 			.then((response) => {
-				console.log(response);
 				this.heroes = response.data;
-				console.log(this.heroes);
 			});
   }
 
@@ -31,7 +28,6 @@ class EditTeamController {
 			this._$http
 				.get(`http://gateway.marvel.com:80/v1/public/characters?name=${this.name}&apikey=6e7bd33438a14b84d91097cd3cfc46b5`)
 				.then((response) => {
-					console.log(response);
 					this.hero = response.data.data.results[0];
 					if(this.validateAdd(this.hero)) {
 						this.previewName = this.hero.name;
@@ -39,7 +35,6 @@ class EditTeamController {
 						this.previewImage = `${this.hero.thumbnail.path}.${this.hero.thumbnail.extension}`;
 					}
 			}).catch((error) => {
-				console.log(`Error: ${error}`);
 				alert(`Could not find that hero: ${this.name}`);
 			});
 	}

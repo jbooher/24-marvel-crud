@@ -1,1 +1,29 @@
-Team
+  <header>
+    <h1 class="team-name">{{ teamCtrl.team.name }}</h1>
+    <h2 class="team-creator">by {{ teamCtrl.team.creator }}</h2>
+    <span class="team-edit">Your Team?</span>
+    <a ui-sref="edit_team({id: teamCtrl.id})">
+      Edit it!
+    </a>
+  </header>
+
+  <div class="character-list">
+    <div class="character" ng-repeat="character in teamCtrl.heroes | orderBy: 'name'">
+
+      <div class="character--left">
+        <img class="character--image" ng-src="{{ character.image }}">
+      </div>
+
+      <div class="character--right">
+
+        <div class="character--top">
+          <h2 class="character--name">{{character.name}}</h2>
+        </div>
+
+        <div class="character--bottom">
+          <p class="character--description">{{character.description}}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
