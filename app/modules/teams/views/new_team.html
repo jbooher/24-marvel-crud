@@ -1,4 +1,8 @@
-<h1 class="header">Welcome, {{ newCtrl.creator }}!</h1>
+<h2 class="header">
+  <h2 class="header--name">
+    Welcome, {{ newCtrl.creator }}!
+  </h2>
+</h2>
 
 <form class="input" ng-submit="newCtrl.createTeam()">
   <input class="input--text" type="text" ng-model="newCtrl.name" placeholder="New Team Name">

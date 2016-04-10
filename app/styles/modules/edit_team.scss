@@ -1,5 +1,5 @@
 .preview {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -11,7 +11,19 @@
   justify-content: center;
   color: #fff;
 
+  &--image {
+    width: 400px;
+  }
+
   &--name {
     font-size: 3rem;
   }
+
+  .button {
+    margin: 0 10px;
+  }
+}
+
+.character-list {
+  margin-top: 20px;
 }

@@ -13,18 +13,27 @@ body {
   font-family: Helvetica; }
 
 .navigation {
-  background: linear-gradient(45deg, darkblue -60%, lightblue, darkblue);
-  border-bottom: 3px solid #00004d;
+  background: linear-gradient(90deg, #0000cc, #3333ff, #0000cc);
+  border-bottom: 2px solid #00004d;
   text-align: center;
   height: 100px;
-  font-size: 3rem; }
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
   .navigation a {
-    color: #fff;
-    display: inline-block;
-    background-image: linear-gradient(to bottom, #606d75, #000);
     border-radius: 5px;
     padding: 10px 20px;
-    margin-top: 10px; }
+    margin-top: 10px;
+    color: #FFF;
+    background: #000;
+    box-shadow: 2px 2px 2px #555, inset 0 25px 20px -10px rgba(255, 255, 255, 0.3), inset 0 -15px 20px -10px rgba(0, 0, 0, 0.15);
+    transition: background-color 1s ease, color .5s; }
+    .navigation a:hover {
+      color: #000;
+      background: #cc9900;
+      box-shadow: -1px -1px -1px #555, inset 0 20px 20px -10px rgba(0, 0, 0, 0.15), inset 0 -15px 20px -10px rgba(255, 255, 255, 0.3);
+      transition: background-color 1s ease, color .5s; }
 
 .button {
   padding: 10px 20px;
@@ -38,19 +47,20 @@ body {
 
 .container {
   width: 80%;
+  min-height: calc(100vh - 100px);
   margin: 0px auto;
-  padding: 20px;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
-  background-image: linear-gradient(to top, #eee, #777);
-  border-left: 1px solid #333;
-  border-right: 1px solid #333; }
+  background-color: #fff;
+  border-left: 2px solid #333;
+  border-right: 2px solid #333; }
 
 body {
   background-image: linear-gradient(to bottom, #eee, #777); }
 
 .preview {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -61,11 +71,17 @@ body {
   align-items: center;
   justify-content: center;
   color: #fff; }
+  .preview--image {
+    width: 400px; }
   .preview--name {
     font-size: 3rem; }
+  .preview .button {
+    margin: 0 10px; }
+
+.character-list {
+  margin-top: 20px; }
 
 .preview--image, .character--image, .input--image {
-  width: 400px;
   border: 2px solid #000;
   border-radius: 5px; }
 
@@ -77,7 +93,6 @@ body {
   color: #fff;
   border: none;
   border-radius: 5px;
-  margin: 0 10px;
   text-transform: uppercase; }
   .preview--cancel:hover, .preview--add:hover, .preview--submit:hover, .preview--delete:hover, .character--cancel:hover, .character--add:hover, .character--submit:hover, .character--delete:hover, .input--cancel:hover, .input--add:hover, .input--submit:hover, .input--delete:hover {
     background-image: linear-gradient(to bottom, #0000ff, #6666ff); }
@@ -114,13 +129,15 @@ body {
 
 .header {
   text-align: center;
-  margin: 20px 0;
   font-size: 2.25rem; }
   .header--name {
     color: #0000cc;
+    text-align: center;
+    text-transform: capitalize;
     font-variant: small-caps;
     display: inline-block;
-    margin: 10px 0; }
+    margin: 20px 0;
+    font-size: 2rem; }
   .header--creator {
     color: #333;
     display: inline-block;
@@ -128,18 +145,28 @@ body {
     font-style: italic;
     font-weight: normal; }
   .header--edit {
-    margin: 10px 0;
+    margin-bottom: 10px;
     font-size: 1.5rem;
-    vertical-align: middle; }
+    vertical-align: middle;
+    text-align: center; }
     .header--edit .button {
       font-size: .5rem;
       vertical-align: middle; }
   .header--nav {
     font-size: 1.5rem; }
+  .header--welcome {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem; }
 
 .team-list {
   text-align: center;
   font-size: 1.25rem; }
+  .team-list a {
+    transition: color, .3s; }
+    .team-list a:hover {
+      color: #cc9900;
+      transition: color, .2s; }
 
 .character-list {
   display: flex;
@@ -163,7 +190,8 @@ body {
     width: 35%;
     margin-right: 20px; }
   .character--image {
-    width: 100%; }
+    width: 100%;
+    height: 175px; }
   .character--right {
     width: 60%; }
   .character--top {

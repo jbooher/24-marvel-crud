@@ -2,18 +2,29 @@
   <img class="preview--image" ng-src="{{editCtrl.previewImage}}">
   <h2 class="preview--name" >{{editCtrl.previewName}}</h2>
   <form class="preview--form">
-    <input class="preview--cancel" ng-click="editCtrl.previewRemove()" type="submit" value="Cancel">
-    <input class="preview--add" ng-click="editCtrl.addCharacter()" type="submit" value="Add">
+    <input class="preview--cancel button" ng-click="editCtrl.previewRemove()" type="submit" value="Cancel">
+    <input class="preview--add button" ng-click="editCtrl.addCharacter()" type="submit" value="Add">
   </form>
   <p class="preview--description">{{editCtrl.previewDesc}}</p>
 </div>
 
-  <form class="input" ng-hide="editCtrl.heroes.length >= 6" ng-submit="editCtrl.previewCharacter()">
-    <input class="input--text" type="text" ng-model="editCtrl.name">
-    <input class="input--submit" type="submit">
-  </form>
+  <h1 class="header">
 
-  <h1 class="header">Your Team ({{editCtrl.heroes.length}}/6)</h1>
+    <h2 class="header--name">
+      Your Team ({{editCtrl.heroes.length}}/6)
+    </h2>
+
+    <div class="header--edit">
+      Done editing?
+      <input type="submit" class="button" ui-sref="team({id: editCtrl.id})" value="View">
+    </div>
+
+    <form class="input" ng-hide="editCtrl.heroes.length >= 6" ng-submit="editCtrl.previewCharacter()">
+      <input class="input--text" type="text" ng-model="editCtrl.name">
+      <input class="input--submit" type="submit">
+    </form>
+
+  </h1>
 
   <div class="character-list">
     <div class="character" ng-repeat="character in editCtrl.heroes | orderBy: 'name'">
